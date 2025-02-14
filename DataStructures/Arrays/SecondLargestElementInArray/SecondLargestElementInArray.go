@@ -18,13 +18,13 @@ import (
 
 func main() {
 	fmt.Println("Second Largest Element in Array")
-	nums := []int{1, 3, 4, 2, 6, 5, 89} // second largest is 5
+	nums := []int{1, 3, 4, 2, 6, 5, 89} // second largest is 6
 
 	// sort the array 🤡
 	naive(nums)
 
 	// above naive method will modify the slice, so re-assigning the elements
-	nums = []int{12, 35, 1, 10, 34, 1} // second largest is 5
+	nums = []int{12, 35, 1, 10, 34, 1} // second largest is 34
 
 	// linear time but 2 pass
 	optimal(nums)
