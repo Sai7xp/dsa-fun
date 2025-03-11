@@ -9,6 +9,11 @@ import java.util.Scanner;
 public class HelloWorld {
     @SuppressWarnings("null")
     public static void main(String[] args) {
+        // this count++ changes will reflect in StaticKeyword.java
+        System.out.println(Counter.count);
+        Counter.count++;
+        StaticKeyword.main(args);
+
         System.out.println("Command Line Args: " + Arrays.toString(args));
         System.out.println("Hello World");
 

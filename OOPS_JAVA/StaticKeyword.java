@@ -8,7 +8,8 @@ class Counter {
         this.counterName = counterName;
     }
 
-    // static block
+    // static block gets executed only once: first time the class is loaded into
+    // memory
     static {
         System.out.println("Inside the static block of a class. This will run only once");
         count2 = count * 10;
@@ -22,6 +23,7 @@ class Counter {
 
     void nonStaticMethod() {
         greeting(); // we can access non-static inside another non-static method directly
+        foobar();
     }
 
     void greeting() {
@@ -37,8 +39,9 @@ class Counter {
 
 public class StaticKeyword {
     public static void main(String[] args) {
-        System.out.println("count2: " + Counter.count2);
+        // Note: Check the usage of Counter class in HelloWorld.java
 
+        System.out.println("count2: " + Counter.count2);
         System.out.println("Count 1 : " + Counter.count);
         Counter.count++;
         System.out.println("Count 1 after incrementing: " + Counter.count);
