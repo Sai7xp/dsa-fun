@@ -66,3 +66,55 @@ func printPrefixesOfNum(x int) {
 }
 
 ```
+
+### Find the shortest distance between two elements in a circular array
+
+```java
+
+// Note: Logic from 3488. Closest Equal Element Queries Problem
+
+// [10, 11, 22, 33, 44] shortest distance between 11,44 is 2. (array is circular)
+// i and j are the indexes of 11 and 44
+int shortestDistance = Math.min(Math.abs(j - i), len - Math.abs(i - j));
+```
+
+### Find the left and right elements of an element in a circular array
+
+```java
+// [12, 13, 8] - find the left and right elements of 12. Left is 8 and right is 13
+int elementIndex = 0;
+
+int leftElementIndex = list.get((elementIndex - 1 + size) % size);
+int rightElementIndex = list.get((elementIndex + 1) % size);
+
+```
+
+### Custom Comparators in Java
+
+```java
+	int[] arr = new int[] { 1, 2, 4, 2, 2, 0 };
+	// Collections.sort(arr); ❌ Collections.sort() can be used only on collections. List<T>
+	Arrays.sort(arr); // ascending order
+	// For sorting array in descending order we need to use custom comparator
+	// and Custom Comparator doesn't work on primitives
+
+	Integer[] arrObj = new Integer[] { 1, 2, 4, 2, 2, 0 };
+	// Collections.sort(arrObj); ❌ Collections.sort() can be used only on collections. List<T>
+	Arrays.sort(arrObj, (a, b) -> {
+	    return b - a;
+	});
+	// or
+	Arrays.sort(arrObj, Collections.reverseOrder());
+
+
+	/*
+	 * Collections
+	 */
+	List<Integer> lis = new ArrayList<>(Arrays.asList(1, 6, 4, 0, 2, 999, 777));
+	// different ways to sort the List type
+    Collections.sort(lis);
+    Collections.sort(lis, Collections.reverseOrder());
+    lis.sort((a, b) -> b - a);
+    lis.sort(null);
+
+```

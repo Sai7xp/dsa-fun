@@ -48,6 +48,11 @@ public class Objects {
         stealBalance(bobAccount);
         System.out.println("Account Balance after stealBalance(): " + bobAccount.balance);
 
+        Value v1 = new Value(10);
+        Value v2 = new Value(11);
+        var isTrue = v1.equals(v2);
+        System.out.println("v1 == v2 ? " + isTrue);
+
     }
 
     static void modifyAccount(BankAccount a) {
@@ -58,4 +63,21 @@ public class Objects {
         a.balance = 0;
     }
 
+}
+
+class Value {
+
+    @Override
+    public boolean equals(Object obj) {
+        Value other = (Value) obj;
+        if (this.x != other.x)
+            return false;
+        return true;
+    }
+
+    int x;
+
+    Value(int x) {
+        this.x = x;
+    }
 }

@@ -9,8 +9,9 @@
 
 - [Imp Code Snippets/Logics](imp_logics.md)
 - [Java Cheat Sheet Notion Link ↗][def34]
+- [👑 Java Fundamentals & OOPs Concepts(Inheritance, Polymorphism, Abstraction, Encapsulation)][def149]
+- [👑 Writing a Custom Comparator in Java][def157]
 - [Var Args - Java][def51]
-- [Loops & Conditions][def52]
 - [Strings & StringBuilder - Java][def53]
 - [Boxing, Unboxing, Auto-boxing - Java][def54]
 - [Patterns][def59]
@@ -63,9 +64,10 @@
 
 ### 2D Arrays
 
-| Status                  | Problem Details                     | Description |
-| ----------------------- | ----------------------------------- | ----------- |
-| <ul><li> [x] </li></ul> | [289. Game of Life][def74] `Medium` |             |
+| Problem Details                                       | Description                                                                        |
+| ----------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [289. Game of Life][def74] `Medium`                   |                                                                                    |
+| [2570. Merge Two 2D Arrays by Summing Values][def154] | given arrays are already sorted. so use two pointers and merge them. `List<int[]>` |
 
 <!-- Strings  -->
 
@@ -99,6 +101,8 @@
 | [875. Koko Eating Bananas][def124]                                     | **Brute force:**Start with 1 banana per hour and then keep on increasing the per hour banana count by 1 until the totalHours <= h. Like a linear search - start from 1 to maxOfAllPiles. **Optimal:** Replace Linear Search with BS                                                                                                                                       |
 | [2064. Minimized Maximum of Products Distributed to Any Store][def126] | Similar to Koko Eating Bananas Problem                                                                                                                                                                                                                                                                                                                                    |
 | [3152. Special Array II][def146]                                       | First find out all the bad indexes and check if there's any bad index which lies in each given range.                                                                                                                                                                                                                                                                     |
+| [2529. Maximum Count of Positive Integer and Negative Integer][def155] | **Solution 1:** Check every middle whether it's +ve or -ve and then check the adjacent element and move the left and right pointers. **Solution 2:** Find the upper and lower bound. (Ceil & Floor)                                                                                                                                                                       |
+| [💎 3488. Closest Equal Element Queries][def156]                       |                                                                                                                                                                                                                                                                                                                                                                           |
 
 <!-- Sorting -->
 
@@ -107,6 +111,7 @@
 | Problem                                                            | Description                        |
 | ------------------------------------------------------------------ | ---------------------------------- |
 | [3301. Maximize the Total Height of Unique Towers][def96] `Medium` | Hashmaps & Sorting usecase problem |
+| [💎💎 1636. Sort Array by Increasing Frequency][def158]            | **Custom comparators in Java**     |
 
 <!-- Two Pointers  -->
 
@@ -147,17 +152,19 @@
 | [992. Subarrays with K Different Integers][def118]                   | Traditional slidind window approach won't work. Dry run `[2, 1, 1, 1, 3, 4, 3, 1]` to see why. **Optimal Solution:**Use `count(sum<=goal) - count(sum<=goal-1)`                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | [2303. Count Subarrays With Score Less Than K][def119]               | Same as **[713. Subarray Product Less Than K][def120]**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | [3254. Find the Power of K-Size Subarrays I][def125]                 | Fixed-size window problem. just keep track of a last index where consecutiveness is missed, If that index is less than or equal to leftPointer then we can say current window elements are sorted, and last element will be the score                                                                                                                                                                                                                                                                                                                                           |
+| [1658. Minimum Operations to Reduce X to Zero][def151]               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 <!-- Prefix Sum & Suffix Sum  -->
 
 ### Prefix Sum & Suffix Sum
 
-| Problem Details                                                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [💎 GFG: Longest Sub-Array with Sum K (+ve and -ve)][def104]                  | This problem looks like a **sliding window** problem but it can't be solved using sliding window approach because array contains -ve & +ve numbers. So we need to use **HashMap** and store the prefixsum,index                                                                                                                                                                                                                                  |
-| [💎 560. Subarray Sum Equals K][def117]                                       | Keep track of prefix sum in each step and increase count in two conditions. **1:**When prefix sum == k then we found the subarray with sum k. **2:**Suppose the prefix is x now but we are looking for k, so if we can find subarray with `x-k` simply we can remove that part and remaining subarray sum will be k, so look for prefixSum - k in hashmap. Remember prefix sum can be repeated since arr contains -ve numbers and 0 also         |
-| [💎💎 525. Contiguous Array][def115]                                          | almost same as subarray sum equal K problem where we need to get the total subarrays count but here we need to find the longest subarr length. since array contains only 0 and 1 and we need to find the max subarray with equal 0's and 1's, consider 0 as -1 and 1 as 1 only, now find the prefix sum when sum == 0 then find the max len and store the prefix sum in hashmap in each step and check if 0-prefixSum already exists in hashmap. |
-| [💎 1769. Minimum Number of Operations to Move All Balls to Each Box][def135] | Use a single for loop and keep track of all the balls left to curr index. Each time we move to the next box, the distance for all the balls we’ve passed increases by one. Do the same thing from right to left.                                                                                                                                                                                                                                 |
+| Problem Details                                                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [💎 GFG: Longest Sub-Array with Sum K (+ve and -ve)][def104]                  | This problem looks like a **sliding window** problem but it can't be solved using sliding window approach because array contains -ve & +ve numbers. So we need to use **HashMap** and store the prefixsum,index                                                                                                                                                                                                                                                                                                                         |
+| [💎 560. Subarray Sum Equals K][def117]                                       | Keep track of prefix sum in each step and increase count in two conditions. **1:**When prefix sum == k then we found the subarray with sum k. **2:**Suppose the prefix is x now but we are looking for k, so if we can find subarray with `x-k` simply we can remove that part and remaining subarray sum will be k, so look for prefixSum - k in hashmap. Remember prefix sum can be repeated since arr contains -ve numbers and 0 also                                                                                                |
+| [💎💎 525. Contiguous Array][def115]                                          | almost same as subarray sum equal K problem where we need to get the total subarrays count but here we need to find the longest subarr length. since array contains only 0 and 1 and we need to find the max subarray with equal 0's and 1's, consider 0 as -1 and 1 as 1 only, when the counter becomes 0 it means that till i 0's & 1's are equal so update max len as i + 1. and additionally check hashmap if current counter value already appeared before , if yes then we can consider the subarray from that index to current i |
+| [💎 1769. Minimum Number of Operations to Move All Balls to Each Box][def135] | Use a single for loop and keep track of all the balls left to curr index. Each time we move to the next box, the distance for all the balls we’ve passed increases by one. Do the same thing from right to left.                                                                                                                                                                                                                                                                                                                        |
+| [💎 1352. Product of the Last K Numbers][def148]                              | Keep track of last appeared zero index                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 <!-- Recursion and Backtracking Problems  -->
 
@@ -192,6 +199,7 @@
 | [💎 Implement Stack Operations - Push, Pop, Peek, Increment(uptoIndex, incrementValue)][def35] | Implement the given stack operations in O(1) Time Complexity. Especially INC operation is bit interesting here.                                                                                |
 | [2696. Minimum String Length After Removing Substrings][def100]                                | Pretty good problem to get started with Stack Data structure.                                                                                                                                  |
 | [1910. Remove All Occurrences of a Substring][def143] (Can be solved using KMP Algorithm also) | Keep pushing each char of string into stack, once the stack size reaches the pattern size then check if last chars of stack matches with pattern, if they don't match put them back into stack |
+| [735. Asteroid Collision][def153]                                                              |                                                                                                                                                                                                |
 
 <!-- Heap/PriorityQueue  -->
 
@@ -273,6 +281,11 @@ Problems that can be solved using cyclic sort technique
 Problems that can be solved using Bucket sort technique
 
 - [💎 Minimum Time Difference][def85]
+
+### Greedy
+
+- [3457. Eat Pizzas!][def150] - Eat all the heaviest pizzas for odd days, then eat 2 heavist pizzas for even days.
+- [605. Can Place Flowers][def152]
 
 ### CSES Problem Set
 
@@ -427,3 +440,15 @@ Problems that can be solved using Bucket sort technique
 [def144]: https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/description/
 [def145]: https://leetcode.com/problems/special-array-i/description/?envType=daily-question&envId=2025-02-01
 [def146]: LeetCode/Arrays/SpecialArrayII
+[def147]: Algorithms/DynamicConnectivity
+[def148]: https://leetcode.com/problems/product-of-the-last-k-numbers/description/?envType=daily-question&envId=2025-02-14
+[def149]: OOPS_JAVA
+[def150]: https://leetcode.com/problems/eat-pizzas/description/
+[def151]: https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/
+[def152]: https://leetcode.com/problems/can-place-flowers/description/
+[def153]: https://leetcode.com/problems/asteroid-collision/description/
+[def154]: https://leetcode.com/problems/merge-two-2d-arrays-by-summing-values/description/?envType=daily-question&envId=2025-03-02
+[def155]: LeetCode/Arrays/LC2529
+[def156]: LeetCode/Arrays/LC3488
+[def157]: OOPS_JAVA/CustomComparator.java
+[def158]: LeetCode/Sorting/LC1636
