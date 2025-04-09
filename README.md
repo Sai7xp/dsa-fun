@@ -53,7 +53,8 @@
 | 💎 [Move Zeroes][move_zeros] `Easy`                                          |                                                                                                                                                                                                                                                                                                              |
 | 🧬 [Majority Element - Moore's Voting Algorithm][def12] `Easy`               | hint: `MayBeMajority`. Assume that first as majority element and increment count if nums[i] is MayBeMajority otherwise count--. when count reaches 0 we can say that what ever we have assumed as majority is not majority element till that i(in that subarray) so assume next element as majority element. |
 | 💎 [Majority Element II][def142]                                             | max two majority elements will be there(greater than n/3). keep two counters and do inc, dec according to moore voting algorithm. at last check the each element count again if the count is > n/3. Then add them to result list.                                                                            |
-| 💎 [Number of Arithmetic Triplets][def18] `Easy`                             |                                                                                                                                                                                                                                                                                                              |
+| 💎 [Number of Arithmetic Triplets][def18] `Easy`                             | `j - i = diff` & `k - j = diff` from 1st equation find `i` and from 2nd equation find `j` now substitute `j` in first equation.                                                                                                                                                                              |
+| 💎 [2874. Maximum Value of an Ordered Triplet II][def159]                    | Maintain `maxSoFar`, `maxDiff` and find out the max res.                                                                                                                                                                                                                                                     |
 | 💎 [Remove Duplicates From Sorted Array II][def20] `Medium`                  |                                                                                                                                                                                                                                                                                                              |
 | 💎💎 [ 442. Find all Duplicates in an Array][def49] `Medium`                 |                                                                                                                                                                                                                                                                                                              |
 | 💎 [41. First Missing Positive][def55] `Hard`                                |                                                                                                                                                                                                                                                                                                              |
@@ -190,6 +191,26 @@
 | [77. Combinations][def134]                                                  |                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [17. Letter Combinations of a Phone Number][def132]                         | Check notes for explanation                                                                                                                                                                                                                                                                                                                                                                            |
 
+<!-- Linked List -->
+
+### Linked List
+
+| Problem Details                                                    | Description                                                                                                                                                                                                                             |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [🌻 Linked List Implementation - Singly, Doubly, Circular][def160] |                                                                                                                                                                                                                                         |
+| [707. Design Linked List][def164]                                  |                                                                                                                                                                                                                                         |
+| [🌻 Add Two Numbers][def161]                                       | Add two big numbers and return the result in a linked list, single digit for each node                                                                                                                                                  |
+| [83. Remove Duplicates from Sorted List][def162]                   | Compare every two adjacent elements. if the values are same then do `first.next = second.next.next`. Otherwise `first = first.next` (just moving to next node)                                                                          |
+| [328. Odd Even Linked List][def171]                                |                                                                                                                                                                                                                                         |
+| [21. Merge Two Sorted Lists][def163]                               |                                                                                                                                                                                                                                         |
+| [876. Middle of the Linked List][def165]                           |                                                                                                                                                                                                                                         |
+| [141. Linked List Cycle][def167]                                   |                                                                                                                                                                                                                                         |
+| [142. Linked List Cycle II][def166]                                |                                                                                                                                                                                                                                         |
+| [148. Sort List][def168]                                           | Sort the given list using merge sort. Keep on breaking the list into two halves(at middle) until it's unbreakable. and start merging the two sorted lists                                                                               |
+| [206. Reverse Linked List][def169]                                 |                                                                                                                                                                                                                                         |
+| [234. Palindrome Linked List][def170]                              | Reverse the 2nd half of list, compare both lists. and revert back the changes (reversing 2nd half)                                                                                                                                      |
+| [143. Reorder List][def172]                                        | we have to link 1st node and last node. then 2nd node and second node from last. It's like folding list into half. last node will overlap on first node. so reverse the second half of the List and start linking the nodes VVV pattern |
+
 <!-- Stack  -->
 
 ### Stack
@@ -284,7 +305,7 @@ Problems that can be solved using Bucket sort technique
 
 ### Greedy
 
-- [3457. Eat Pizzas!][def150] - Eat all the heaviest pizzas for odd days, then eat 2 heavist pizzas for even days.
+- [3457. Eat Pizzas!][def150] - Eat all the heaviest pizzas for odd days first, then eat 2nd heavist pizzas for even days.
 - [605. Can Place Flowers][def152]
 
 ### CSES Problem Set
@@ -452,3 +473,17 @@ Problems that can be solved using Bucket sort technique
 [def156]: LeetCode/Arrays/LC3488
 [def157]: OOPS_JAVA/CustomComparator.java
 [def158]: LeetCode/Sorting/LC1636
+[def159]: https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii/description/
+[def160]: DataStructures/LinkedLists
+[def161]: https://takeuforward.org/plus/dsa/linked-list/logic-building/add-two-numbers-in-ll
+[def162]: https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
+[def163]: https://leetcode.com/problems/merge-two-sorted-lists/description/
+[def164]: https://leetcode.com/problems/design-linked-list/
+[def165]: https://leetcode.com/problems/middle-of-the-linked-list/description/
+[def166]: https://leetcode.com/problems/linked-list-cycle-ii/description/
+[def167]: https://leetcode.com/problems/linked-list-cycle/description/
+[def168]: https://leetcode.com/problems/sort-list/description/
+[def169]: https://leetcode.com/problems/reverse-linked-list/description/
+[def170]: DataStructures/LinkedLists/PalindromeLinkedList.java
+[def171]: https://leetcode.com/problems/odd-even-linked-list/
+[def172]: https://leetcode.com/problems/reorder-list/description/
