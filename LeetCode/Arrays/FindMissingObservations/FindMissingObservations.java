@@ -21,21 +21,22 @@ final class FindMissingObservations {
         for (int x : rolls) {
             rollsSum += x;
         }
-        int missingRollsSum = ((rolls.length + n) * mean) - rollsSum;
-
-        if (missingRollsSum <= 0 || missingRollsSum > (6 * n))
+        int missingRollsSum = (mean * (n + rolls.length)) - rollsSum;
+        if (missingRollsSum < n || missingRollsSum > (6 * n))
             return new int[0];
+        int[] res = new int[n];
 
-        int[] missing = new int[n];
-        // min value of all the elements in res array will be set to this each Min
+        // min value of all the elements in res array will be set to eachRollMin
         // then the remaining quotient will be distributed until it becomes zero
-        int eachMin = missingRollsSum / n;
-        int q = missingRollsSum % n;
+        int eachRollMin = missingRollsSum / n;
+        int extra = missingRollsSum % n;
         for (int i = 0; i < n; i++) {
-            missing[i] = eachMin + (q != 0 ? 1 : 0);
-            q--;
+            res[i] = eachRollMin;
+            if (extra > 0) {
+                res[i] += 1;
+            }
+            extra--;
         }
-
-        return missing;
+        return res;
     }
 }
