@@ -84,15 +84,16 @@
 
 ### Strings
 
-| Problem Details                                                                  | Description                                                                                                                                                                                               |
-| -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Valid Anagram][def7] `Easy`                                                     |                                                                                                                                                                                                           |
-| [796. Rotate String - Find if s can become g after some rotations][def56] `Easy` | **BruteForce:** return (s+s).contains(g). **Optimal:** Get the starting index (s.char(i) == g.charAt(i)) and check if the strings are equal. Use (i%len) if pointers goes out of index.                   |
-| [Reverse words in a String][def58] `Medium`                                      |                                                                                                                                                                                                           |
-| [💎💎 14. Longest Common Prefix][def90]                                          | **BruteForce:** find the minlen of all string and check the each char of each string until minlen. **Optimal:** sort the given list of strings. find the max common prefix len for first and last strings |
-| [💎 Generate All Substrings, Subsequences, Permutations of String][def101]       |                                                                                                                                                                                                           |
-| [2259. Remove Digit From Number to Maximize Result][def139]                      | Analyze "5515", "5565" & "5456" numbers to get the solution(Digit = "5").(If there is no greater digit than given digit is present then remove the last occurence of digit in num from right to left)     |
-| [1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence][def144]     |                                                                                                                                                                                                           |
+| Problem Details                                                                  | Description                                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Valid Anagram][def7] `Easy`                                                     |                                                                                                                                                                                                                          |
+| [796. Rotate String - Find if s can become g after some rotations][def56] `Easy` | **BruteForce:** return (s+s).contains(g). **Optimal:** Get the starting index (s.char(i) == g.charAt(i)) and check if the strings are equal. Use (i%len) if pointers goes out of index.                                  |
+| [Reverse words in a String][def58] `Medium`                                      |                                                                                                                                                                                                                          |
+| [💎💎 14. Longest Common Prefix][def90]                                          | **BruteForce:** find the minlen of all string and check the each char of each string until minlen. **Optimal:** sort the given list of strings. find the max common prefix len for first and last strings                |
+| [💎 Generate All Substrings, Subsequences, Permutations of String][def101]       |                                                                                                                                                                                                                          |
+| [2259. Remove Digit From Number to Maximize Result][def139]                      | Analyze "5515", "5565" & "5456" numbers to get the solution(Digit = "5").(If there is no greater digit than given digit is present then remove the last occurence of digit in num from right to left)                    |
+| [1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence][def144]     |                                                                                                                                                                                                                          |
+| [1657. Determine if Two Strings Are Close][def221]                               | "abb", "bba" these are close. Both strings should contain same chars and freq doesn't need to be same of same chars. And second check for frequencies. when we sort the frequencies of two strings, they should be equal |
 
 <!-- Binary Search  -->
 
@@ -363,19 +364,25 @@ Problems that can be solved using Bucket sort technique
 - [Zig Zag or Spiral Traversal][def216] - toggle a boolean value 'isReverse' at each level, based on this boolean value, decide where to add the each element in curr level. either at the front or at the end of list.
 - [Find Largest value in each tree row][def206] - Level order Traversal
 - [Max Depth of Binary Tree][def207] - Iterative: perform level order traversal and calculate levels. Recursive: max(left,right). two recursive calls. one will find the left tree count, and another finds the right tree count, now take the max of both
-- [Leaf Similar Trees][def220] - Find all the leaf nodes of a tree
+- [Leaf Similar Trees][def220] - Find all the leaf nodes of a tree. we can perform dfs and visit every node. when node.left == null & node.right == null that means it's a leaf node.
+- [Binary Tree Paths][def222] - Find paths from root to all leaves. DFS + Backtracking
 - [Diameter of Binary Tree][def210] - at every node, LeftHeight + RightHeight is the diameter. use maxDepth() approach
-- [Balanced Binary Tree][def215] - BFS. Check height of left and right subtree at every node. Use maxDepth() approach
+- [Balanced Binary Tree][def215] - DFS. Check height difference of left and right subtree at every node. Use maxDepth() approach
+- [Binary Tree Maximum Path Sum][def226] - DFS
 - [Same Tree][def208] - perform DFS for both the trees simultaneously. if both becomes null then fine. if any one becomes null and other is not null or p.val != q.val then return false. we need to check this for each node. so at each node we have to check left and right nodes. two recursive calls
 - [Symmetric Tree][def209] - Same as "Same Tree" Problem with a slight change. Left,Right & Right,Left should match
 - [Vertical Order Traversal of BT][def217] - Group values by col and use `TreeMap<Integer, TreeMap<Integer, List<Integer>>>` to store values in order
-- [Right Size View of Binary Tree][def218] - **Brute Force(Iterative):** Perform Level order traversal and get the last element from each level. **Optimal:** Perform dfs and carry the level number in recursive calls to know the level number. if the res.size() == level then consider that element
--
+- [Top View of BT][def227]
+- [Right/Left Side View of Binary Tree][def218] - **Brute Force(Iterative):** Perform Level order traversal and get the last element from each level. **Optimal:** Perform dfs and carry the level number in recursive calls to know which level we are currently in. if the res.size() == level then consider that element
+- [Lowest Common Ancestor of BT][def223] - **Brute Force:** Find the paths for two given nodes and check the both paths for how long they are equal, the last equal node will be the LCA. **Optimal:** At every node look for p,q nodes on both left and right sides. when we find p or q then immediately return that node. when we are at a node and we get both left and right as not null, that means we found the two nodes so the current node becomes our answer so return it.
 
 ### Binary Search Trees
 
 - [Search in Binary Search Tree][def211] - Find the target in `Log(N)` time. since the tree is BST
 - [Find Floor & Ceil in a BST][def212]
+- [Insert into a Binary Search Tree][def224] - Find the leaf position where we can insert our new node. Keep going left and right based on the value at each node. (make use of BST property `L < N < R`). Make sure that you don't end up at null, if you are going to end up then that is the position where we have to insert our new node.
+- [Delete Node in a BST][def225]
+- [Validate Binary Search Tree][def228] - provide min,max range for each node. and check if node.val lies in the given range only or not. if not return false.
 
 ### CSES Problem Set
 
@@ -604,3 +611,11 @@ Problems that can be solved using Bucket sort technique
 [def218]: https://leetcode.com/problems/binary-tree-right-side-view/
 [def219]: https://leetcode.com/problems/number-of-recent-calls/?envType=study-plan-v2&envId=leetcode-75
 [def220]: https://leetcode.com/problems/leaf-similar-trees/description/?envType=study-plan-v2&envId=leetcode-75
+[def221]: https://leetcode.com/problems/determine-if-two-strings-are-close/?envType=study-plan-v2&envId=leetcode-75
+[def222]: https://leetcode.com/problems/binary-tree-paths/
+[def223]: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+[def224]: https://leetcode.com/problems/insert-into-a-binary-search-tree/
+[def225]: https://leetcode.com/problems/delete-node-in-a-bst/
+[def226]: https://leetcode.com/problems/binary-tree-maximum-path-sum/
+[def227]: https://takeuforward.org/plus/dsa/binary-trees/faqs/top-view-of-bt
+[def228]: https://leetcode.com/problems/validate-binary-search-tree/description/
