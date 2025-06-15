@@ -94,6 +94,7 @@
 | [2259. Remove Digit From Number to Maximize Result][def139]                      | Analyze "5515", "5565" & "5456" numbers to get the solution(Digit = "5").(If there is no greater digit than given digit is present then remove the last occurence of digit in num from right to left)                    |
 | [1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence][def144]     |                                                                                                                                                                                                                          |
 | [1657. Determine if Two Strings Are Close][def221]                               | "abb", "bba" these are close. Both strings should contain same chars and freq doesn't need to be same of same chars. And second check for frequencies. when we sort the frequencies of two strings, they should be equal |
+| [443. String Compression][def229]                                                |                                                                                                                                                                                                                          |
 
 <!-- Binary Search  -->
 
@@ -259,14 +260,17 @@
 | [2696. Minimum String Length After Removing Substrings][def100]                                | Pretty good problem to get started with Stack Data structure.                                                                                                                                                                  |
 | [1910. Remove All Occurrences of a Substring][def143] (Can be solved using KMP Algorithm also) | Keep pushing each char of string into stack, once the stack size reaches the pattern size then check if last chars of stack matches with pattern, if they don't match put them back into stack                                 |
 
-<!-- Heap/PriorityQueue  -->
+<!-- Heap/Priority Queue  -->
 
-### Heap/PriorityQueue
+### Heap/Priority Queue
 
-| Problem Details                                                                     | Description                                                                                                                                                                                           |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [2530. Maximal Score After Applying K Operations][def103]                           | pretty good problem to get started with Heap                                                                                                                                                          |
-| [451. Sort Characters By Frequency][def127] **ᐧ** [Another Similar Problem][def173] | count the freq of all chars and then push all those freq in priority queue(pq in descending order) poll each element from pq and append the char to result whose freq is equal to topFreq(polled one) |
+[215. Kth Largest Element in an Array][def230] - **Brute Force:** Sort the array and return arr[len - k]. **Better:** Maintain a Min-Heap of size k. First insert k elements of array and after that insert only if element is greater than peek. so at the end peek becomes the Kth largest. **Optimal:** Quick Select Algorithm
+[1046. Last Stone Weight][def231] - Use a Max Heap and process top 2 elements until we end up with empty or 1 element in pq `O(n log n)`
+[2558. Takes Gifts from the richest pile][def233] - Check notes for explanation
+[506. Relative Ranks][def232]
+[347. Top K Frequent Elements][def235] - 3 Approaches : Sorting, Max Heap, Bucket Sort(optimal)
+[2530. Maximal Score After Applying K Operations][def103] - pretty good problem to get started with Heap  
+[451. Sort Characters By Frequency][def127] **ᐧ** [Another Similar Problem][def173] - count the freq of all chars using a map and then push all the keys into priority queue(apply custom comparator `(a, b) -> freq.get(b) - freq.get(a)`) and then poll each char and do `sb.repeat(ch,map.get(ch))`. **Bucket Sort:** Calculate the frequencies using map and put the chars into a bucket array, where index is the freq of that char
 
 <!-- Dynamic Programming  -->
 
@@ -619,3 +623,10 @@ Problems that can be solved using Bucket sort technique
 [def226]: https://leetcode.com/problems/binary-tree-maximum-path-sum/
 [def227]: https://takeuforward.org/plus/dsa/binary-trees/faqs/top-view-of-bt
 [def228]: https://leetcode.com/problems/validate-binary-search-tree/description/
+[def229]: https://leetcode.com/problems/string-compression/
+[def230]: https://leetcode.com/problems/kth-largest-element-in-an-array/
+[def231]: https://leetcode.com/problems/last-stone-weight/
+[def232]: LeetCode/Heaps/RelativeRanks
+[def233]: https://leetcode.com/problems/take-gifts-from-the-richest-pile/description/
+[def234]: https://leetcode.com/problems/top-k-frequent-elements/
+[def235]: LeetCode/Heaps/LC347
