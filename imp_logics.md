@@ -117,4 +117,41 @@ Collections.sort(lis, Collections.reverseOrder());
 lis.sort((a, b) -> b - a);
 lis.sort(null);
 
+
+// Arrays.sort()
+Arrays.sort(numsObj, new Comparator<Integer>() {
+    public int compare(Integer a, Integer b) {
+        if (freq.get(a).equals(freq.get(b))) {
+            return Integer.compare(b, a);
+        } else {
+            return Integer.compare(freq.get(a), freq.get(b));
+        }
+    }
+});
+
+// Same above logic using lamba expression
+Arrays.sort(numsObj, (a, b) -> {
+    int afreq = freq.get(a);
+    int bfreq = freq.get(b);
+    if (afreq == bfreq) {
+        return b - a;
+    }
+    return afreq - bfreq;
+});
+```
+
+### map.keySet()
+
+Tok k freq elements, Sort Chars by Freq
+
+```java
+Map<Character, Integer> freq = new HashMap<>();
+for(char ch : s.toCharArray()){
+    freq.put(ch, freq.getOrDefault(ch,0) + 1);
+}
+List<Character> chars = new ArrayList<>(freq.keySet());
+
+// Custom Comparator - lamba expression
+chars.sort((a, b) -> freq.get(b) - freq.get(a));
+
 ```
