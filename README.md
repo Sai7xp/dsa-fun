@@ -69,7 +69,6 @@
 | [Transpose Matrix][def196]                                                   | If the matrix is m _ n we need to create another matrix of size n _ m and move the elements. if the matrix is n \* n then we can do it inplace.                                                                                                                                                                                                                                                                                 |
 | [Rotate Image][def197]                                                       | **1.** Transpose the Matrix & **2.** Exchange the columns                                                                                                                                                                                                                                                                                                                                                                       |
 | [73. Set Matrix Zeroes][def198]                                              | **Brute force:** create two separate arrays of size m, n respectively and use them as markers, when matrix[i][j] == 0 then mark 1 in those two arrays at positions i and j. **Optimal:** Use top row and first column as marker arrays (no extra arrays needed)                                                                                                                                                                 |
-| [Merge Intervals][def200]                                                    | Sort the array using custom comparator `Arrays.sort(intervals,(o1, o2) -> o1[0] - o2[0])` Now start merging intervals                                                                                                                                                                                                                                                                                                           |
 
 <!-- 2D Arrays  -->
 
@@ -268,17 +267,19 @@
 [1046. Last Stone Weight][def231] - Use a Max Heap and process top 2 elements until we end up with empty or 1 element in pq `O(n log n)`
 [2558. Takes Gifts from the richest pile][def233] - Check notes for explanation
 [506. Relative Ranks][def232]
-[347. Top K Frequent Elements][def235] - 3 Approaches : Sorting, Max Heap, Bucket Sort(optimal)
+[💎 347. Top K Frequent Elements][def235] - 3 Approaches : Sorting, Max Heap, Bucket Sort(optimal)
 [2530. Maximal Score After Applying K Operations][def103] - pretty good problem to get started with Heap  
-[451. Sort Characters By Frequency][def127] **ᐧ** [Another Similar Problem][def173] - count the freq of all chars using a map and then push all the keys into priority queue(apply custom comparator `(a, b) -> freq.get(b) - freq.get(a)`) and then poll each char and do `sb.repeat(ch,map.get(ch))`. **Bucket Sort:** Calculate the frequencies using map and put the chars into a bucket array, where index is the freq of that char
+[💎 451. Sort Characters By Frequency][def127] **ᐧ** [Another Similar Problem][def173] - count the freq of all chars using a map and then push all the keys into priority queue(apply custom comparator `(a, b) -> freq.get(b) - freq.get(a)`) and then poll each char and do `sb.repeat(ch,map.get(ch))`. **Bucket Sort:** Calculate the frequencies using map and put the chars into a bucket array, where index is the freq of that char
+[💎 Find Median from Data Stream][def236] - Check notes for clear explanation. Idea is to use two heaps - minHeap & maxHeap and divide the stream values into the heaps. anytime if we want median we just have to look at the peeks of the two heaps
+[Meeting Rooms 2][def238] - Two things to check - If there's a conflict we need new room. at the same time before occupying new room, check if there are any previous meetings that ended so that we can occupy that room
 
-<!-- Dynamic Programming  -->
+<!-- Intervals -->
 
-### Dynamic Programming
+### Intervals
 
-| Problem Details                                    | Description                                                                             |
-| -------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [💎 121. Best Time to Buy and Sell a Stock][def30] | Keep track of min price before the ith price and subtract min price from current price. |
+[💎 Merge Intervals][def200] - Sort the array using custom comparator `Arrays.sort(intervals,(o1, o2) -> o1[0] - o2[0])` Now start merging intervals
+[💎 Insert Intervals][def239] - identify the part where we can insert our new interval, till then take all the left part greedily and in the middle part we have to insert new interval, and take the remaining right part greedily
+[Meeting Rooms 1][def237] - Sort the intervals by starting time and start checking for any overlaps, if there's a overlap then immediately return false
 
 <!-- HashTable  -->
 
@@ -387,6 +388,14 @@ Problems that can be solved using Bucket sort technique
 - [Insert into a Binary Search Tree][def224] - Find the leaf position where we can insert our new node. Keep going left and right based on the value at each node. (make use of BST property `L < N < R`). Make sure that you don't end up at null, if you are going to end up then that is the position where we have to insert our new node.
 - [Delete Node in a BST][def225]
 - [Validate Binary Search Tree][def228] - provide min,max range for each node. and check if node.val lies in the given range only or not. if not return false.
+
+<!-- Dynamic Programming  -->
+
+### Dynamic Programming
+
+| Problem Details                                    | Description                                                                             |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [💎 121. Best Time to Buy and Sell a Stock][def30] | Keep track of min price before the ith price and subtract min price from current price. |
 
 ### CSES Problem Set
 
@@ -594,7 +603,7 @@ Problems that can be solved using Bucket sort technique
 [def197]: https://leetcode.com/problems/rotate-image/description/
 [def198]: https://leetcode.com/problems/set-matrix-zeroes/
 [def199]: Algorithms/Backtracking/Maze.java
-[def200]: https://leetcode.com/problems/merge-intervals/
+[def200]: LeetCode/Arrays/MergeIntervals/MergeIntervals.java
 [def201]: https://leetcode.com/problems/search-a-2d-matrix/
 [def202]: https://leetcode.com/problems/binary-tree-inorder-traversal/
 [def203]: https://leetcode.com/problems/binary-tree-preorder-traversal/
@@ -630,3 +639,7 @@ Problems that can be solved using Bucket sort technique
 [def233]: https://leetcode.com/problems/take-gifts-from-the-richest-pile/description/
 [def234]: https://leetcode.com/problems/top-k-frequent-elements/
 [def235]: LeetCode/Heaps/LC347
+[def236]: https://leetcode.com/problems/find-median-from-data-stream/description/
+[def237]: https://neetcode.io/problems/meeting-schedule
+[def238]: https://neetcode.io/problems/meeting-schedule-ii?list=neetcode150
+[def239]: LeetCode/IntervalProblems/InsertInterval

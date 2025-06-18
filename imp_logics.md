@@ -155,3 +155,22 @@ List<Character> chars = new ArrayList<>(freq.keySet());
 chars.sort((a, b) -> freq.get(b) - freq.get(a));
 
 ```
+
+### Math.ceil for double
+
+```java
+Math.ceil(s.length() / 2) ❌
+
+Math.ceil(s.length() / 2.0) ✅
+```
+
+### Arrays.sort() int[] vs int[][]
+
+```java
+// usually custom comparator doesn't work on primitives right ? we need to convert int[] to Integer[] to use comparator
+// but how come we can use it on int[][] ? because array is a object in java, not a primitive
+
+int[][] interval
+Arrays.sort(intervals, (o1, o2) -> o1[0] - o2[0]);
+
+```
