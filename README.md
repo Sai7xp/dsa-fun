@@ -264,26 +264,26 @@
 
 ### Heap/Priority Queue
 
-[**Visualize Heap**][def242]
-[215. Kth Largest Element in an Array][def230] - **Brute Force:** Sort the array and return arr[len - k]. **Better:** Maintain a Min-Heap of size k. First insert k elements of array and after that insert only if element is greater than peek. so at the end peek becomes the Kth largest. **Optimal:** Quick Select Algorithm
-[1046. Last Stone Weight][def231] - Use a Max Heap and process top 2 elements until we end up with empty or 1 element in pq `O(n log n)`
-[2558. Takes Gifts from the richest pile][def233] - Check notes for explanation
-[506. Relative Ranks][def232]
-[💎 347. Top K Frequent Elements][def235] - 4 Approaches : Sorting, Max Heap, **Min Heap of size k(Optimal), Bucket Sort(optimal)**
-[2530. Maximal Score After Applying K Operations][def103] - pretty good problem to get started with Heap  
-[💎 451. Sort Characters By Frequency][def127] **ᐧ** [Another Similar Problem][def173] - count the freq of all chars using a map and then push all the keys into priority queue(apply custom comparator `(a, b) -> freq.get(b) - freq.get(a)`) and then poll each char and do `sb.repeat(ch,map.get(ch))`. **Bucket Sort:** Calculate the frequencies using map and put the chars into a bucket array, where index is the freq of that char
-[💎 Find Median from Data Stream][def236] - Check notes for clear explanation. Idea is to use two heaps - minHeap & maxHeap and divide the stream values into the heaps. anytime if we want median we just have to look at the peeks of the two heaps
-[Meeting Rooms 2][def238] - Two things to check - If there's a conflict we need new room. at the same time before occupying new room, check if there are any previous meetings that ended so that we can occupy that room
+- [**Visualize Heap**][def242]
+- [215. Kth Largest Element in an Array][def230] - **Brute Force:** Sort the array and return arr[len - k]. **Better:** Maintain a Min-Heap of size k. First insert k elements of array and after that insert only if element is greater than peek. so at the end peek becomes the Kth largest. **Optimal:** Quick Select Algorithm
+- [1046. Last Stone Weight][def231] - Use a Max Heap and process top 2 elements until we end up with empty or 1 element in pq `O(n log n)`
+- [2558. Takes Gifts from the richest pile][def233] - Check notes for explanation
+- [506. Relative Ranks][def232]
+- [💎 347. Top K Frequent Elements][def235] - 4 Approaches : Sorting, Max Heap, **Min Heap of size k(Optimal), Bucket Sort(optimal)**
+- [2530. Maximal Score After Applying K Operations][def103] - pretty good problem to get started with Heap
+- [💎 451. Sort Characters By Frequency][def127] **ᐧ** [Another Similar Problem][def173] - count the freq of all chars using a map and then push all the keys into priority queue(apply custom comparator `(a, b) -> freq.get(b) - freq.get(a)`) and then poll each char and do `sb.repeat(ch,map.get(ch))`. **Bucket Sort:** Calculate the frequencies using map and put the chars into a bucket array, where index is the freq of that char
+- [💎 Find Median from Data Stream][def236] - Check notes for clear explanation. Idea is to use two heaps - minHeap & maxHeap and divide the stream values into the heaps. anytime if we want median we just have to look at the peeks of the two heaps
+- [Meeting Rooms 2][def238] - Two things to check - If there's a conflict we need new room. at the same time before occupying new room, check if there are any previous meetings that ended so that we can occupy that room
 
 <!-- Intervals -->
 
 ### Intervals
 
-[💎 Merge Intervals][def200] - Sort the array using custom comparator `Arrays.sort(intervals,(o1, o2) -> o1[0] - o2[0])` Now start merging intervals
-[💎 Insert Intervals][def239] - Identify the part where we can insert our new interval, till then take all the left part greedily and in the middle part we have to insert new interval, and take the remaining right part greedily
-[Meeting Rooms 1][def237] - Sort the intervals by starting time and start checking for any overlaps, if there's a overlap then immediately return false
-[N meetings in one room][def240] - Greedy. sort meetings by end time and check how many meetings we can accomodate
-[Non Overlapping Intervals][def241] - sort the intervals by their end time and whenever there's a overlap we need to remove that interval. keep track of lastScheduledMeetingEndTime
+- [💎 Merge Intervals][def200] - Sort the array using custom comparator `Arrays.sort(intervals,(o1, o2) -> o1[0] - o2[0])` Now start merging intervals
+- [💎 Insert Intervals][def239] - Identify the part where we can insert our new interval, till then take all the left part greedily and in the middle part we have to insert new interval, and take the remaining right part greedily
+- [Meeting Rooms 1][def237] - Sort the intervals by starting time and start checking for any overlaps, if there's a overlap then immediately return false
+- [N meetings in one room][def240] - Greedy. sort meetings by end time and check how many meetings we can accomodate
+- [Non Overlapping Intervals][def241] - sort the intervals by their end time and whenever there's a overlap we need to remove that interval. keep track of lastScheduledMeetingEndTime
 
 <!-- HashTable  -->
 
