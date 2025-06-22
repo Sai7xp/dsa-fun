@@ -69,6 +69,7 @@
 | [Transpose Matrix][def196]                                                   | If the matrix is m _ n we need to create another matrix of size n _ m and move the elements. if the matrix is n \* n then we can do it inplace.                                                                                                                                                                                                                                                                                 |
 | [Rotate Image][def197]                                                       | **1.** Transpose the Matrix & **2.** Exchange the columns                                                                                                                                                                                                                                                                                                                                                                       |
 | [73. Set Matrix Zeroes][def198]                                              | **Brute force:** create two separate arrays of size m, n respectively and use them as markers, when matrix[i][j] == 0 then mark 1 in those two arrays at positions i and j. **Optimal:** Use top row and first column as marker arrays (no extra arrays needed)                                                                                                                                                                 |
+| [Count Special Triplets][def243]                                             | maintain leftFreq and rightFreq maps                                                                                                                                                                                                                                                                                                                                                                                            |
 
 <!-- 2D Arrays  -->
 
@@ -263,11 +264,12 @@
 
 ### Heap/Priority Queue
 
+[**Visualize Heap**][def242]
 [215. Kth Largest Element in an Array][def230] - **Brute Force:** Sort the array and return arr[len - k]. **Better:** Maintain a Min-Heap of size k. First insert k elements of array and after that insert only if element is greater than peek. so at the end peek becomes the Kth largest. **Optimal:** Quick Select Algorithm
 [1046. Last Stone Weight][def231] - Use a Max Heap and process top 2 elements until we end up with empty or 1 element in pq `O(n log n)`
 [2558. Takes Gifts from the richest pile][def233] - Check notes for explanation
 [506. Relative Ranks][def232]
-[💎 347. Top K Frequent Elements][def235] - 3 Approaches : Sorting, Max Heap, Bucket Sort(optimal)
+[💎 347. Top K Frequent Elements][def235] - 4 Approaches : Sorting, Max Heap, **Min Heap of size k(Optimal), Bucket Sort(optimal)**
 [2530. Maximal Score After Applying K Operations][def103] - pretty good problem to get started with Heap  
 [💎 451. Sort Characters By Frequency][def127] **ᐧ** [Another Similar Problem][def173] - count the freq of all chars using a map and then push all the keys into priority queue(apply custom comparator `(a, b) -> freq.get(b) - freq.get(a)`) and then poll each char and do `sb.repeat(ch,map.get(ch))`. **Bucket Sort:** Calculate the frequencies using map and put the chars into a bucket array, where index is the freq of that char
 [💎 Find Median from Data Stream][def236] - Check notes for clear explanation. Idea is to use two heaps - minHeap & maxHeap and divide the stream values into the heaps. anytime if we want median we just have to look at the peeks of the two heaps
@@ -278,8 +280,10 @@
 ### Intervals
 
 [💎 Merge Intervals][def200] - Sort the array using custom comparator `Arrays.sort(intervals,(o1, o2) -> o1[0] - o2[0])` Now start merging intervals
-[💎 Insert Intervals][def239] - identify the part where we can insert our new interval, till then take all the left part greedily and in the middle part we have to insert new interval, and take the remaining right part greedily
+[💎 Insert Intervals][def239] - Identify the part where we can insert our new interval, till then take all the left part greedily and in the middle part we have to insert new interval, and take the remaining right part greedily
 [Meeting Rooms 1][def237] - Sort the intervals by starting time and start checking for any overlaps, if there's a overlap then immediately return false
+[N meetings in one room][def240] - Greedy. sort meetings by end time and check how many meetings we can accomodate
+[Non Overlapping Intervals][def241] - sort the intervals by their end time and whenever there's a overlap we need to remove that interval. keep track of lastScheduledMeetingEndTime
 
 <!-- HashTable  -->
 
@@ -362,15 +366,17 @@ Problems that can be solved using Bucket sort technique
 
 ### 🌳 Binary Trees
 
+> Revision History: June 19th 2025,
+
 - [BT Inorder Traversal][def202] - Left ROOT Right
 - [BT Preorder Traversal][def203] - ROOT Left Right
 - [BT Postorder Traversal][def204] - Left Right ROOT (for iterative go in reverse - ROOT Right Left and reverse the result in the end)
 - [102. Binary Tree Level Order Traversal][def205] - Use a Queue and Go Level By Level
 - [Zig Zag or Spiral Traversal][def216] - toggle a boolean value 'isReverse' at each level, based on this boolean value, decide where to add the each element in curr level. either at the front or at the end of list.
 - [Find Largest value in each tree row][def206] - Level order Traversal
-- [Max Depth of Binary Tree][def207] - Iterative: perform level order traversal and calculate levels. Recursive: max(left,right). two recursive calls. one will find the left tree count, and another finds the right tree count, now take the max of both
+- [Max Depth of Binary Tree][def207] - **Iterative**: perform level order traversal and calculate levels. **Recursive:** max(left,right). two recursive calls. one will find the left tree count, and another finds the right tree count, now take the max of both
 - [Leaf Similar Trees][def220] - Find all the leaf nodes of a tree. we can perform dfs and visit every node. when node.left == null & node.right == null that means it's a leaf node.
-- [Binary Tree Paths][def222] - Find paths from root to all leaves. DFS + Backtracking
+- [💎 Binary Tree Paths][def222] - Find paths from root to all leaves. DFS + Backtracking
 - [Diameter of Binary Tree][def210] - at every node, LeftHeight + RightHeight is the diameter. use maxDepth() approach
 - [Balanced Binary Tree][def215] - DFS. Check height difference of left and right subtree at every node. Use maxDepth() approach
 - [Binary Tree Maximum Path Sum][def226] - DFS
@@ -388,6 +394,17 @@ Problems that can be solved using Bucket sort technique
 - [Insert into a Binary Search Tree][def224] - Find the leaf position where we can insert our new node. Keep going left and right based on the value at each node. (make use of BST property `L < N < R`). Make sure that you don't end up at null, if you are going to end up then that is the position where we have to insert our new node.
 - [Delete Node in a BST][def225]
 - [Validate Binary Search Tree][def228] - provide min,max range for each node. and check if node.val lies in the given range only or not. if not return false.
+
+<!-- 📈 Graphs 📈  -->
+
+### 📈 Graphs
+
+[Represent Graph as Adjacency List when edges[][] and N is given][def244]
+[Graph DFS Traversal - Recursive(Stack)][def245]
+[Graph BFS Traversal - using Queue][def246]
+[BFS & DFS Practice Problem][def247]
+
+[Total Components Count][def248] : [Code][def249] - We have to count the total components in a given undirected graph, Usually during dfs/bfs traversal we start from one node and visit all other nodes because graph is a single component, but here the given graph can have disconnected components, so we have to run another loop and count the total components
 
 <!-- Dynamic Programming  -->
 
@@ -643,3 +660,13 @@ Problems that can be solved using Bucket sort technique
 [def237]: https://neetcode.io/problems/meeting-schedule
 [def238]: https://neetcode.io/problems/meeting-schedule-ii?list=neetcode150
 [def239]: LeetCode/IntervalProblems/InsertInterval
+[def240]: https://takeuforward.org/plus/dsa/greedy-algorithms/scheduling-and-interval-problems/n-meetings-in-one-room?tab=submissions
+[def241]: https://leetcode.com/problems/non-overlapping-intervals/
+[def242]: https://visualgo.net/en/heap
+[def243]: https://leetcode.com/problems/count-special-triplets/description/
+[def244]: DataStructures/Graphs/GraphAsAdjacencyList_01.java
+[def245]: DataStructures/Graphs/Graph_DFS_02.java
+[def246]: DataStructures/Graphs/Graph_BFS_03.java
+[def247]: https://takeuforward.org/plus/dsa/graph/theory-and-traversals/traversal-techniques?tab=editorial
+[def248]: https://takeuforward.org/plus/dsa/graph/theory-and-traversals/connected-components
+[def249]: DataStructures/Graphs/CountComponents.java
