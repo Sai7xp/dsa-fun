@@ -208,6 +208,8 @@ public class RecursionOnStrings {
 
         // ignore first num
         processed.removeLast();
+        // remember this removeLast is not backtracking. there is diff between
+        // "i = i + 1 and then calling fn(i)" vs directly calling fn(i+1)
         subsetsOfArrayRec(processed, given, currIndex + 1, res);
 
     }

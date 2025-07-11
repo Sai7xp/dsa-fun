@@ -20,31 +20,31 @@ public class CombinationSumII {
      * Backtracking approach
      * Time Complexity - 2 ^ n * k
      */
-    public static void generateCombinations(List<Integer> processed, int[] given, int target, int index,
+    public static void generateCombinations(List<Integer> processed, int[] unprocessed, int position, int target,
             List<List<Integer>> res) {
-
         if (target == 0) {
             res.add(new ArrayList<>(processed));
             return;
         }
-        if (index == given.length || target < 0) {
+        if (target < 0)
             return;
-        }
-        // starting from index 0 we have 5 options to pick the first element, so pick
-        // only unique ones as a first element
-        for (int i = index; i < given.length; i++) { // check for all possibilites
-
-            if (i > index && given[i] == given[i - 1]) {
+        for (int i = position; i < unprocessed.length; i++) {
+            if (i > position && unprocessed[i] == unprocessed[i - 1]) {
                 // curr num should not be same as prev(avoiding duplicates), we
                 // don't have to check condition when picking first number for
                 // nth position
                 continue;
             }
-            int num = given[i];
-            processed.add(num);
-            generateCombinations(processed, given, target - num, i + 1, res);
+            int choiceForCurrentPosition = unprocessed[i];
+            processed.add(choiceForCurrentPosition);
+            // current position num is locked, go and find the nums for next position,
+            // that's why i + 1
+            generateCombinations(processed, unprocessed, i + 1, target - choiceForCurrentPosition, res);
+
+            // this is actual backtracking, undoing the choice that we made, we no longer
+            // need this choice because we found out all the answers with this choice, now
+            // go and give chance to another guys to be at this position
             processed.removeLast();
         }
-
     }
 }

@@ -86,7 +86,10 @@ public class RecursionOnArrays {
         if (i >= nums.length - 1)
             return true;
 
-        return (nums[i] < nums[i + 1]) && isArrSorted(nums, ++i);
+        if (nums[i] > nums[i + 1])
+            return false;
+
+        return isArrSorted(nums, i + 1);
 
         /*
          * Above single line can be written in below 3 lines as well
