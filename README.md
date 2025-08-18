@@ -95,6 +95,7 @@
 | [1455. Check If a Word Occurs As a Prefix of Any Word in a Sentence][def144]     |                                                                                                                                                                                                                          |
 | [1657. Determine if Two Strings Are Close][def221]                               | "abb", "bba" these are close. Both strings should contain same chars and freq doesn't need to be same of same chars. And second check for frequencies. when we sort the frequencies of two strings, they should be equal |
 | [443. String Compression][def229]                                                |                                                                                                                                                                                                                          |
+| [953. Verifying an Alien Dictionary][def259]                                     | Lexicographical Sorting                                                                                                                                                                                                  |
 
 <!-- Binary Search  -->
 
@@ -270,6 +271,7 @@
 - [2558. Takes Gifts from the richest pile][def233] - Check notes for explanation
 - [506. Relative Ranks][def232]
 - [💎 347. Top K Frequent Elements][def235] - 4 Approaches : Sorting, Max Heap, **Min Heap of size k(Optimal), Bucket Sort(optimal)**
+- [K Closest Points to Origin][def255]
 - [2530. Maximal Score After Applying K Operations][def103] - pretty good problem to get started with Heap
 - [💎 451. Sort Characters By Frequency][def127] **ᐧ** [Another Similar Problem][def173] - count the freq of all chars using a map and then push all the keys into priority queue(apply custom comparator `(a, b) -> freq.get(b) - freq.get(a)`) and then poll each char and do `sb.repeat(ch,map.get(ch))`. **Bucket Sort:** Calculate the frequencies using map and put the chars into a bucket array, where index is the freq of that char
 - [💎 Find Median from Data Stream][def236] - Check notes for clear explanation. Idea is to use two heaps - minHeap & maxHeap and divide the stream values into the heaps. anytime if we want median we just have to look at the peeks of the two heaps
@@ -399,12 +401,25 @@ Problems that can be solved using Bucket sort technique
 
 ### 📈 Graphs
 
-[Represent Graph as Adjacency List when edges[][] and N is given][def244]
-[Graph DFS Traversal - Recursive(Stack)][def245]
-[Graph BFS Traversal - using Queue][def246]
-[BFS & DFS Practice Problem][def247]
-
-[Total Components Count][def248] : [Code][def249] - We have to count the total components in a given undirected graph, Usually during dfs/bfs traversal we start from one node and visit all other nodes because graph is a single component, but here the given graph can have disconnected components, so we have to run another loop and count the total components
+| Problem Details                                                           | Description                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Represent Graph as Adjacency List when edges[][] and N is given][def244] |                                                                                                                                                                                                                                                                                                                                                                |
+| [Find Town Judge - Directed Graph Problem][def257]                        |                                                                                                                                                                                                                                                                                                                                                                |
+| [Graph DFS Traversal - Recursive(Stack)][def245]                          |                                                                                                                                                                                                                                                                                                                                                                |
+| [Graph BFS Traversal - using Queue][def246]                               |                                                                                                                                                                                                                                                                                                                                                                |
+| [BFS & DFS Practice Problem][def247]                                      |                                                                                                                                                                                                                                                                                                                                                                |
+| [Count Total Components][def248] : [Code][def249]                         | We have to count the total components in a given undirected graph, Usually during dfs/bfs traversal we start from one node and visit all other nodes because graph is a single component, but here the given graph can have disconnected components, so we have to run another loop and assume every node as starting node and count the total components      |
+| [Number of Provinces][def250]                                             | Almost same as above problem, here we can consider given isConnect matrix as Adj Matrix and use it for bfs/dfs traversal.                                                                                                                                                                                                                                      |
+| [💎 Number of Islands - **DFS**][def251]                                  | One of my Fav 🌻 Graph problem, initially it looked like a provinces problem but the given matrix is `m x n` so we can't do typical dfs or bfs. we have to gather all the neighbour land, so when we found a land piece explore all the neighbours(top,right,down,left) and if it is a land as then merge it, repeat this recursively for each neighbour land. |
+| [Flood Fill - **DFS**][def252]                                            | Similar to Islands problem                                                                                                                                                                                                                                                                                                                                     |
+| [Max Area of Island][def253]                                              | Simlar to Islands problem                                                                                                                                                                                                                                                                                                                                      |
+| [Surrounded Region][def256]                                               | first find out which are not surrounded by traversing on the boundaries. in the end go through the board again and turn the unsurrounded ones back to O and the uneffected ones(after doing dfs) into X                                                                                                                                                        |
+| [Rotting Oranges - **BFS**][def254]                                       | We have to calculte the min time to turn fresh ones into rotten ones, and two rotten ones can simultaneously turn their neighbours into rotten ones                                                                                                                                                                                                            |
+| [Detect a Cycle in an undirected graph][def258]                           | Can be solved using both BFS and DFS. Keep track of current parent, if any neighbour of current node is already visited and if it is not the parent then we have a cycle, cuz some other guy visited the neighbour already                                                                                                                                     |
+| [Bipartite Graph][def260]                                                 | (BFS and DFS both) check if we can color a graph such that no two adjacent nodes have same color. So All linear graphs without any cycle can be bipartite, and the graphs which has cycles if there's any cycle with odd nodes it can't be Bipartite                                                                                                           |
+| **🌻 DAG - Direct Acyclic Graph 🌻**                                      |                                                                                                                                                                                                                                                                                                                                                                |
+| [🧬 Topological Sort DAG - Algorithm **DFS & BFS**][def261]               | **DFS:** keep doing dfs. node with no more neighbours will be pushed to stack first, so that it comes last in the topo order <br /> <br /> **BFS:** Kahn's Algorithm - calculate the indegree of each node and push nodes with indegree == 0 first into the queue... BFS approach helps to detect cycle as well                                                |
+| [Detect Cycle in Directed Graph][def262]                                  | **DFS:** algorithm which used for undirected graph won't work here, we need to maintain `visited` & `pathVisited` arrays. unmark the `pathVisited` while coming back <br /> **BFS:** Khan's Algorithm - topo order array.length should be equal to N                                                                                                           |
 
 <!-- Dynamic Programming  -->
 
@@ -670,3 +685,16 @@ Problems that can be solved using Bucket sort technique
 [def247]: https://takeuforward.org/plus/dsa/graph/theory-and-traversals/traversal-techniques?tab=editorial
 [def248]: https://takeuforward.org/plus/dsa/graph/theory-and-traversals/connected-components
 [def249]: DataStructures/Graphs/CountComponents.java
+[def250]: LeetCode/Graphs/NumberOfProvinces
+[def251]: LeetCode/Graphs/NumberOfIslands
+[def252]: https://leetcode.com/problems/flood-fill/
+[def253]: https://leetcode.com/problems/max-area-of-island/
+[def254]: LeetCode/Graphs/RottingOranges
+[def255]: https://leetcode.com/problems/k-closest-points-to-origin/
+[def256]: https://leetcode.com/problems/surrounded-regions/
+[def257]: https://leetcode.com/problems/find-the-town-judge/
+[def258]: DataStructures/Graphs/DetectCycleUndirectedGraph.java
+[def259]: https://leetcode.com/problems/verifying-an-alien-dictionary/
+[def260]: https://leetcode.com/problems/is-graph-bipartite/
+[def261]: DataStructures/Graphs/TopologicalSortGraph.java
+[def262]: DataStructures/Graphs/CycleDetectionDirectedGraph.java
