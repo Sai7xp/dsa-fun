@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Queue;
 
 // Practice Link - https://takeuforward.org/plus/dsa/graph/cycles/detect-a-cycle-in-an-undirected-graph
+// Detect whether cycle exists or not in an undirected graph
+// Keep track of current node parent 
+// if we come across any neigh which is already visited and is not the parent of curr node, then we can say cycle exists
+// We can do it by both DFS and BFS
 public class DetectCycleUndirectedGraph {
     public boolean isCycle(int n, List<Integer>[] adj) {
         boolean[] visited = new boolean[n];
