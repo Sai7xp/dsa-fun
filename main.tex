@@ -5,7 +5,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,10pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -48,7 +48,7 @@
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1.19in}
 \addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{2in}
+\addtolength{\textheight}{1in}
 
 \urlstyle{same}
 
@@ -131,14 +131,14 @@
 %     \vspace{-4pt}
 % \end{center}
 \begin{center}
-    {\LARGE \textbf{SAI SUMANTH}} \\ [4pt]
+    {\LARGE \textbf{SAI SUMANTH}} \\ [2pt]
     \small 
     \raisebox{-0.1\height}\faPhone\ +91 8919225428 ~ 
-    \href{mailto:saisumanth2303@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{saisumanth2303@gmail.com}} ~ 
-    \href{https://linkedin.com/in/sai7xp}{\raisebox{-0.2\height}\faLinkedin\ \underline{sai7xp}} ~
-    \href{https://github.com/sai7xp}{\raisebox{-0.2\height}\faGithub\ \underline{sai7xp}} ~
-    \href{https://sumanth.netlify.app/}{\raisebox{-0.2\height}\faGlobe\ \underline{sumanth.netlify.app}}
-    \vspace{2pt}
+    \href{mailto:saisumanth2303@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ {saisumanth2303@gmail.com}} ~ 
+    \href{https://linkedin.com/in/sai7xp}{\raisebox{-0.2\height}\faLinkedin\ {sai7xp}} ~
+    \href{https://github.com/sai7xp}{\raisebox{-0.2\height}\faGithub\ {sai7xp}} ~
+    \href{https://sumanth.netlify.app/}{\raisebox{-0.2\height}\faGlobe\ {sumanth.netlify.app}}
+    % \vspace{2pt}
 \end{center}
 
 
@@ -150,47 +150,56 @@
 \section*{\normalsize\textbf{SKILLS}}
  \begin{itemize}[leftmargin=0in, label={}]
     \item{
-     \textbf{Languages }{: Golang, Java, C++, Dart, JavaScript} \\
+     \textbf{Languages }{: Golang, Java, Dart, JavaScript} \\
       \vspace{2pt}
-     \textbf{Technical  }{: Microservices, RESTful APIs, gRPC, Aerospike, MongoDB, Kafka, Docker, Git, Firebase, Flutter, SSEs } \\
+       \textbf{Databases }{: MongoDB, Aerospike, PostgreSQL} \\
       \vspace{2pt}
-     \textbf{Theoretical  }{: Object Oriented Programming, Data Structures \& Algorithms, Cryptography, Concurrency} \\
+     \textbf{Technical  }{: Microservices, Distributed Systems, REST APIs, gRPC, Kafka, Pub/Sub, Docker, JWT, GIT} \\
+      \vspace{2pt}
+     \textbf{Others  }{: Object Oriented Programming, Data Structures \& Algorithms, Cryptography, Concurrency} \\
       \vspace{2pt}
       % \textbf{Database}{: PostgreSQL, MongoDB, Firebase} \\
       % \textbf{Tools}{: VS Code, Docker, Android Studio, Figma} \\
     }
  \end{itemize}
- \vspace{-12pt}
+ \vspace{-10pt}
 %-----------EXPERIENCE-----------
 \section*{\normalsize\textbf{EXPERIENCE}}
 \resumeSubHeadingListStart
   \resumeSubheading
-    {Webknot Technologies}{April 2022 -- Present}
+    {Webknot Technologies}{July 2022 -- Present}
     {Senior Software Engineer}{Bangalore, India}
+     \vspace{2pt}
     \resumeSubheading
-    {HDFC Mobile Banking}{}
+    {HDFC Bank}{}
     {}{}
     \vspace{-14pt}
     \resumeItemListStart
-    \item Part of HDFC mobile banking microservices team, building secure and scalable backend services using Golang.
-          \item Designed and developed the APIs for Silent Mobile Verification device binding method introduced by NPCI to securely \newline verify and bind the SIM to a device.
-           \item Written a \textbf{gRPC} based Notification Service for sending SMS, email notifications to customers. This service is utilized by multiple other microservices teams, handling \textbf{over 2M+} requests per week.
-           \item Developed an \textbf{event logging} middleware to populate each transaction data and publish it to GCP using Google \textbf{Pub/Sub}.
-         
-          % \item Designed a token validation middleware for Go services which validate the required token for a transaction.
-             \item Created an API that allows customers to log in to the mobile banking app using their NetBanking password.
-             % and integrated Snorkel for encrypted password verification.
-           \item \textbf{Tech Stack: Golang, gRPC, Aerospike, Microservices, Podman}
+     \item Part of mobile banking app microservices team, building secure and scalable backend services using Golang.
+    \item Developed a robust \textbf{gRPC} based Notification Service for sending SMS, emails to customers. This service is \newline utilized by 6+ internal teams, handling \textbf{over 1.8M requests/week}.
+    \item Redesigned the \textbf{2FA} auth flow using \textbf{webhooks} and callback URLs to eliminate frontend polling and reduced authentication latency by 30\%.
+   
+% for analytics and debugging purposes.
+ \item Built an \textbf{event logger middleware} to publish 700K+ weekly transactions to GCP via
+\textbf{Pub/Sub} for analytics.
+     \item Designed and developed \textbf{REST APIs} for the Silent Mobile Verification(SMV) introduced by NPCI to securely \newline verify and bind the sim to a device.
+                
+           \item Created an API to allow user login using NetBanking password, integrating Snorkel for \textbf{encrypted verification}.
+           \item \textbf{Tech Stack: Golang, Gorilla Mux, gRPC, Aerospike, Docker, GCP}
               \resumeItemListEnd
+               \vspace{2pt}
            \resumeSubheading
-    {Mitaan (CG Govt.)}{}
+    {Mitaan}{}
     {}{}
     \vspace{-14pt}
      \resumeItemListStart
-      \item Implemented Authentication using \textbf{JWT}, integrated \textbf{Crashlytics} for error monitoring and developed a logging system that writes \textbf{logs to a file} and uploads it to backend on weekly basis.
-          \item Added digital signature verification for citizen documents using Go ECDSA package to ensure documents integrity.
-          \item Designed and implemented an \textbf{offline queue} system to process citizen applications even in remote areas, and applications will be synced to backend automatically once the user is back online.
-      \item{\textbf{Tech Stack: Golang, MongoDB, REST APIs, Flutter.}}
+       % \item Implemented Authentication using \textbf{JWT} and developed a logging system that writes logs to a file and uploads it to backend on weekly basis.
+      \item Implemented \textbf{ECDSA based digital signature} verification for citizen documents to ensure data authenticity.
+       % \item Added \textbf{digital signature} verification for citizen documents using ECDSA algorithm to ensure data authenticity.
+           \item{Integrated Agora sdk for in-app voice calls, handling 2000+ calls/month and used Firebase \textbf{Cloud Functions} \newline to trigger call notifications with 99\% delivery rate.}
+            \item Designed and built an \textbf{offline queue system} for application processing in remote areas, data is auto-synced to backend once user reconnects to internet.
+            \item Developed a \textbf{Cart Management System} with real-time price checks, stock validation before checkout, and inventory updates after order completion.
+      \item{\textbf{Tech Stack: Golang, MongoDB, REST APIs, Flutter}}
       \resumeItemListEnd
     % \vspace{4pt}
     %   \resumeItem{\textbf{HDFC Mobile Banking}}
@@ -215,19 +224,20 @@
     %   \item{\textbf{Tech Stack: Golang, MongoDB, REST APIs, Flutter.}}
     %     \end{itemize}
     % \resumeItemListEnd
-     \resumeSubheading
-    {VetRemedi}{May 2020 -- March 2021}
-    {Full Stack Developer Intern}{Remote}
-    \resumeItemListStart
-    \vspace{2pt}
-          % \resumeItem{Integrated In-App calling using Agora API to provide communication between }
-           \resumeItem{Integrated Agora sdk for in-app voice calling and used Firebase \textbf{Cloud Functions} to trigger call notifications to user.}
-            \resumeItem{Developed a Cart Management System using Flutter and firebase. \textbf{Features:} Latest price checks, stock validation before checkout, updates inventory once the order is completed.}
-             \resumeItem{Open-sourced a NodeJs utility service to generate Agora access tokens on github:
-        \href{https://github.com/Sai7xp/generate-agora-token-nodejs}{{generate-agora-token-nodejs}}}
-        \resumeItem{\textbf{Tech Stack:} {Cloud Functions, Flutter, Agora SDK, Firebase}. {\href{https://www.vetremedi.com/}{\underline{Deployed on Playstore}}}}
-    \resumeItemListEnd
-\resumeSubHeadingListEnd
+%     \vspace{4pt}
+%      \resumeSubheading
+%     {VetRemedi}{May 2020 -- March 2021}
+%     {Full Stack Developer Intern}{Remote}
+%     \resumeItemListStart
+%     \vspace{2pt}
+%           % \resumeItem{Integrated In-App calling using Agora API to provide communication between }
+%            \item{Integrated Agora sdk for in-app voice calling and used Firebase \textbf{Cloud Functions} to trigger call notifications to user.}
+%             \item{Developed a Cart Management System using Flutter and firebase. \textbf{Features:} Latest price checks, stock validation before checkout, updates inventory once the order is completed.}
+%              \item{Open-sourced a NodeJs utility service to generate Agora access tokens on github:
+%         \href{https://github.com/Sai7xp/generate-agora-token-nodejs}{{generate-agora-token-nodejs}}}
+%         \item{\textbf{Tech Stack:} {Cloud Functions, Flutter, Agora SDK, Firebase}. {\href{https://www.vetremedi.com/}{\underline{Live}}}}
+%     \resumeItemListEnd
+% \resumeSubHeadingListEnd
 
   %   \resumeSubheading
   %     {VetRemedi}{May 2020 -- March 2021}
@@ -238,8 +248,8 @@
   %       \resumeItem{Tech Stack: \textbf{Cloud Functions, Flutter, Agora SDK, Firebase}}
   %   \resumeItemListEnd
     
-  % \resumeSubHeadingListEnd
-\vspace{-12pt}
+  \resumeSubHeadingListEnd
+\vspace{-10pt}
 
 
 
@@ -251,29 +261,31 @@
           {\textbf{Remote Deploy}}{\href{https://github.com/Sai7xp/golang-projects/tree/main/02DeployMaven}{ \underline{Link}}}
           \resumeItemListStart
           \vspace{1pt}
-          \resumeItem{Microservice based automation tool built with Golang to build and deploy front-end apps on Docker, NGINX.}
-           \resumeItem{Integrated \textbf{Kafka} for event driven communication, one service accepts build requests and another handles the deployment part.}
-            \resumeItem{Build events are logged in \textbf{MongoDB} and user can check the \textbf{build history} and status by providing the Build Id.}
-            \resumeItem{\textbf{Tech Stack:} Golang, MongoDB, Kafka, Docker, NGINX}
+          \item Microservices based automation tool built with Golang to dynamically \textbf{containerize and deploy} front-end \newline apps on Docker and NGINX with automated port allocation.
+           \item{Integrated \textbf{Kafka} for \textbf{event driven} communication, one service accepts build requests and notifies another service to start the deployment process.}
+            \item{Logged build events in \textbf{MongoDB} and users can retrieve build history and status by providing the Build ID.}
+            \item{\textbf{Tech Stack:} Golang, Kafka, Docker, NGINX, MongoDB}
           \resumeItemListEnd
           \vspace{-12pt}
            \resumeProjectHeading
           {\textbf{REPL DB}}{\href{https://github.com/Sai7xp/go-repl-db}{ \underline{Link}}}
           \resumeItemListStart
-            \resumeItem{Built a \textbf{lightweight}, SQLite inspired REPL database in Go, and it supports operations on list data as of now.}
-            \resumeItem{It's a CLI based database where data is persisted in a custom binary file and supports \textbf{concurrent access.}}
-            \resumeItem{\textbf{Focus:} Golang, CLI, File I/O, Concurrency}
+          \vspace{1pt}
+           \item{Built a \textbf{lightweight}, SQLite inspired REPL database in Go, and it supports operations on list data as of now.}
+            \item{Created this to understand how \textbf{resource locking} mechanism and file I/O works in Go. It's a CLI based tool \newline where data is persisted in a custom binary file and supports \textbf{concurrent access.}}
+            \item{\textbf{Focus:} Golang, CLI, File I/O, Concurrency, Mutexes}
           \resumeItemListEnd
-          \vspace{-12pt}
-          \resumeProjectHeading
-          {\textbf{Github Widget}}{\href{https://github-devprofile-card.netlify.app/generate}{ \underline{Live}}}
-          \resumeItemListStart
-           \resumeItem{Built a custom GitHub profile widget using JS Web Components, \textbf{Github API} and published package on \href{https://www.npmjs.com/package/github-devprofile}{\underline{npm.}}}
-            \resumeItem{Your GitHub Stats can be rendered anywhere on the website with only \textbf{2 Lines of Code}.}
-            % \resumeItem{Tech Stack: \textbf{NPM Package, Web Components, GitHub API}}
-          \resumeItemListEnd 
+          % \vspace{-12pt}
+          % \resumeProjectHeading
+          % {\textbf{GitHub Widget}}{\href{https://github-devprofile-card.netlify.app/generate}{ \underline{Live}}}
+          % \resumeItemListStart
+          % \vspace{1pt}
+          %  \item{Built a custom GitHub profile widget using JS Web Components, \textbf{Github API} and published package on \href{https://www.npmjs.com/package/github-devprofile}{\underline{npm.}}}
+          %   \item{Your GitHub Stats can be rendered anywhere on the website with only \textbf{2 Lines of Code}.}
+          %   % \resumeItem{Tech Stack: \textbf{NPM Package, Web Components, GitHub API}}
+          % \resumeItemListEnd 
     \resumeSubHeadingListEnd
-\vspace{-12pt}
+\vspace{-10pt}
 
 
 %
@@ -284,7 +296,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {\small Bachelor of Technology - Computer Science and Engineering}{2019 -- 2022}
-      {Sri Venkateswara University -- Tirupati}{CGPA: 7.6/10.0}
+      {Sri Venkateswara University -- Tirupati}{CGPA: 7.4/10.0}
   \resumeSubHeadingListEnd
 %------RELEVANT COURSEWORK-------
 % \section{Relevant Coursework}
@@ -318,9 +330,10 @@
           {}{}{}
           \resumeItemListStart
            \vspace{-16pt}
-          \resumeItem{Contributed official starter templates to GatsbyJS.\href{https://github.com/gatsbyjs/gatsby/pulls?q=is:pr+author:Sai7xp+is:closed}{ \underline{gatsby/pulls/Sai7xp}} }
-            \resumeItem{Over \textbf{23K+} views for articles published on\href{https://dev.to/sai7xp}{ \underline{Dev.to}} community.}
-            \resumeItem{Received Google Home device as reward for contributing to \textbf{Google Assistant Actions}.}
+          \item{Contributed official starter templates to GatsbyJS.\href{https://github.com/gatsbyjs/gatsby/pulls?q=is:pr+author:Sai7xp+is:closed}{ \underline{gatsby/pulls/Sai7xp}} }
+            \item{Over \textbf{23K+} views for articles published on\href{https://dev.to/sai7xp}{ \underline{Dev.to}} community.}
+             \item Open-sourced a NodeJs utility service to generate Agora tokens on \href{https://github.com/Sai7xp/generate-agora-token-nodejs}{\underline{github}} to reduce the integration time.
+            % \item{Received Google Home device as reward for contributing to \textbf{Google Assistant Actions}.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 \vspace{-10pt}
