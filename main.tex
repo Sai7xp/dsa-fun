@@ -1,0 +1,328 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{2in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+% \begin{center}
+%     {\Huge \scshape Sai Sumanth} \\ \vspace{1pt}
+%     % 123 Street Name, Town, State 12345 \\ \vspace{1pt}
+%     \small \raisebox{-0.1\height}\faPhone\ +91 89192 25428 ~ \href{mailto:saisumanth2303@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{saisumanth2303@gmail.com}} ~ 
+%     \href{https://linkedin.com/in/sai7xp}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/sai7xp}}  ~
+%     \href{https://github.com/sai7xp}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/sai7xp}}
+%     \vspace{-4pt}
+% \end{center}
+\begin{center}
+    {\LARGE \textbf{SAI SUMANTH}} \\ [4pt]
+    \small 
+    \raisebox{-0.1\height}\faPhone\ +91 8919225428 ~ 
+    \href{mailto:saisumanth2303@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{saisumanth2303@gmail.com}} ~ 
+    \href{https://linkedin.com/in/sai7xp}{\raisebox{-0.2\height}\faLinkedin\ \underline{sai7xp}} ~
+    \href{https://github.com/sai7xp}{\raisebox{-0.2\height}\faGithub\ \underline{sai7xp}} ~
+    \href{https://sumanth.netlify.app/}{\raisebox{-0.2\height}\faGlobe\ \underline{sumanth.netlify.app}}
+    \vspace{2pt}
+\end{center}
+
+
+%-----------SUMMARY-----------
+% \section{SUMMARY}
+%   {Over 2 years of experience in building softwares, I've worked with technologies including GoLang, Microservices, NodeJs, gRPC, RESTful APIs, Docker, Flutter, ReactJs. Most of the work can be found on my GitHub.}
+
+%-----------SKILLS-----------
+\section*{\normalsize\textbf{SKILLS}}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \item{
+     \textbf{Languages }{: Golang, Java, C++, Dart, JavaScript} \\
+      \vspace{2pt}
+     \textbf{Technical  }{: Microservices, RESTful APIs, gRPC, Aerospike, MongoDB, Kafka, Docker, Git, Firebase, Flutter, SSEs } \\
+      \vspace{2pt}
+     \textbf{Theoretical  }{: Object Oriented Programming, Data Structures \& Algorithms, Cryptography, Concurrency} \\
+      \vspace{2pt}
+      % \textbf{Database}{: PostgreSQL, MongoDB, Firebase} \\
+      % \textbf{Tools}{: VS Code, Docker, Android Studio, Figma} \\
+    }
+ \end{itemize}
+ \vspace{-12pt}
+%-----------EXPERIENCE-----------
+\section*{\normalsize\textbf{EXPERIENCE}}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Webknot Technologies}{April 2022 -- Present}
+    {Senior Software Engineer}{Bangalore, India}
+    \resumeSubheading
+    {HDFC Mobile Banking}{}
+    {}{}
+    \vspace{-14pt}
+    \resumeItemListStart
+    \item Part of HDFC mobile banking microservices team, building secure and scalable backend services using Golang.
+          \item Designed and developed the APIs for Silent Mobile Verification device binding method introduced by NPCI to securely \newline verify and bind the SIM to a device.
+           \item Written a \textbf{gRPC} based Notification Service for sending SMS, email notifications to customers. This service is utilized by multiple other microservices teams, handling \textbf{over 2M+} requests per week.
+           \item Developed an \textbf{event logging} middleware to populate each transaction data and publish it to GCP using Google \textbf{Pub/Sub}.
+         
+          % \item Designed a token validation middleware for Go services which validate the required token for a transaction.
+             \item Created an API that allows customers to log in to the mobile banking app using their NetBanking password.
+             % and integrated Snorkel for encrypted password verification.
+           \item \textbf{Tech Stack: Golang, gRPC, Aerospike, Microservices, Podman}
+              \resumeItemListEnd
+           \resumeSubheading
+    {Mitaan (CG Govt.)}{}
+    {}{}
+    \vspace{-14pt}
+     \resumeItemListStart
+      \item Implemented Authentication using \textbf{JWT}, integrated \textbf{Crashlytics} for error monitoring and developed a logging system that writes \textbf{logs to a file} and uploads it to backend on weekly basis.
+          \item Added digital signature verification for citizen documents using Go ECDSA package to ensure documents integrity.
+          \item Designed and implemented an \textbf{offline queue} system to process citizen applications even in remote areas, and applications will be synced to backend automatically once the user is back online.
+      \item{\textbf{Tech Stack: Golang, MongoDB, REST APIs, Flutter.}}
+      \resumeItemListEnd
+    % \vspace{4pt}
+    %   \resumeItem{\textbf{HDFC Mobile Banking}}
+    %     \begin{itemize}
+    %      \item Part of HDFC mobile banking microservices team, building secure and scalable backend services using Golang.
+    %       \item Designed and developed the APIs for Silent Mobile Verification device binding method introduced by NPCI to securely \newline verify and bind the SIM to a device.
+    %        \item Written a \textbf{gRPC} based Notification Service for sending SMS, email notifications to customers. This service is utilized by multiple other microservices teams, handling \textbf{over 2M+} requests per week.
+    %        \item Developed an \textbf{event logging} middleware to populate each transaction data and publish it to GCP using Google \textbf{Pub/Sub}.
+         
+    %       % \item Designed a token validation middleware for Go services which validate the required token for a transaction.
+    %          \item Created an API that allows customers to log in to the mobile banking app using their NetBanking password.
+    %          % and integrated Snorkel for encrypted password verification.
+    %        \item \textbf{Tech Stack: Golang, gRPC, Aerospike, Microservices, Podman}
+           
+    %     \end{itemize}
+    %      \vspace{2pt}
+    %   \resumeItem{\textbf{Mitaan (CG Govt.)}}
+    %     \begin{itemize}
+    %      \item Implemented Authentication using \textbf{JWT}, integrated \textbf{Crashlytics} for error monitoring and developed a logging system that writes \textbf{logs to a file} and uploads it to backend on weekly basis.
+    %       \item Added digital signature verification for citizen documents using Go ECDSA package to ensure documents integrity.
+    %       \item Designed and implemented an \textbf{offline queue} system to process citizen applications even in remote areas, and applications will be synced to backend automatically once the user is back online.
+    %   \item{\textbf{Tech Stack: Golang, MongoDB, REST APIs, Flutter.}}
+    %     \end{itemize}
+    % \resumeItemListEnd
+     \resumeSubheading
+    {VetRemedi}{May 2020 -- March 2021}
+    {Full Stack Developer Intern}{Remote}
+    \resumeItemListStart
+    \vspace{2pt}
+          % \resumeItem{Integrated In-App calling using Agora API to provide communication between }
+           \resumeItem{Integrated Agora sdk for in-app voice calling and used Firebase \textbf{Cloud Functions} to trigger call notifications to user.}
+            \resumeItem{Developed a Cart Management System using Flutter and firebase. \textbf{Features:} Latest price checks, stock validation before checkout, updates inventory once the order is completed.}
+             \resumeItem{Open-sourced a NodeJs utility service to generate Agora access tokens on github:
+        \href{https://github.com/Sai7xp/generate-agora-token-nodejs}{{generate-agora-token-nodejs}}}
+        \resumeItem{\textbf{Tech Stack:} {Cloud Functions, Flutter, Agora SDK, Firebase}. {\href{https://www.vetremedi.com/}{\underline{Deployed on Playstore}}}}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+  %   \resumeSubheading
+  %     {VetRemedi}{May 2020 -- March 2021}
+  %     {Full Stack Developer Intern}{Remote}
+  %     \resumeItemListStart
+  %       \resumeItem{Worked on Firebase Cloud Functions to trigger Push Notifications(FCM) for the Pharmacy app upon new order.}
+  %       \resumeItem{Integrated Agora SDK in Flutter App to enable \textbf{Real Time} Communication between users and pharmacy owners.}
+  %       \resumeItem{Tech Stack: \textbf{Cloud Functions, Flutter, Agora SDK, Firebase}}
+  %   \resumeItemListEnd
+    
+  % \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+
+
+%-----------PROJECTS-----------
+\section*{\normalsize\textbf{PROJECTS}}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Remote Deploy}}{\href{https://github.com/Sai7xp/golang-projects/tree/main/02DeployMaven}{ \underline{Link}}}
+          \resumeItemListStart
+          \vspace{1pt}
+          \resumeItem{Microservice based automation tool built with Golang to build and deploy front-end apps on Docker, NGINX.}
+           \resumeItem{Integrated \textbf{Kafka} for event driven communication, one service accepts build requests and another handles the deployment part.}
+            \resumeItem{Build events are logged in \textbf{MongoDB} and user can check the \textbf{build history} and status by providing the Build Id.}
+            \resumeItem{\textbf{Tech Stack:} Golang, MongoDB, Kafka, Docker, NGINX}
+          \resumeItemListEnd
+          \vspace{-12pt}
+           \resumeProjectHeading
+          {\textbf{REPL DB}}{\href{https://github.com/Sai7xp/go-repl-db}{ \underline{Link}}}
+          \resumeItemListStart
+            \resumeItem{Built a \textbf{lightweight}, SQLite inspired REPL database in Go, and it supports operations on list data as of now.}
+            \resumeItem{It's a CLI based database where data is persisted in a custom binary file and supports \textbf{concurrent access.}}
+            \resumeItem{\textbf{Focus:} Golang, CLI, File I/O, Concurrency}
+          \resumeItemListEnd
+          \vspace{-12pt}
+          \resumeProjectHeading
+          {\textbf{Github Widget}}{\href{https://github-devprofile-card.netlify.app/generate}{ \underline{Live}}}
+          \resumeItemListStart
+           \resumeItem{Built a custom GitHub profile widget using JS Web Components, \textbf{Github API} and published package on \href{https://www.npmjs.com/package/github-devprofile}{\underline{npm.}}}
+            \resumeItem{Your GitHub Stats can be rendered anywhere on the website with only \textbf{2 Lines of Code}.}
+            % \resumeItem{Tech Stack: \textbf{NPM Package, Web Components, GitHub API}}
+          \resumeItemListEnd 
+    \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+
+%
+
+
+%-----------EDUCATION-----------
+\section*{\normalsize\textbf{EDUCATION}}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\small Bachelor of Technology - Computer Science and Engineering}{2019 -- 2022}
+      {Sri Venkateswara University -- Tirupati}{CGPA: 7.6/10.0}
+  \resumeSubHeadingListEnd
+%------RELEVANT COURSEWORK-------
+% \section{Relevant Coursework}
+%     %\resumeSubHeadingListStart
+%         \begin{multicols}{4}
+%             \begin{itemize}[itemsep=-5pt, parsep=3pt]
+%                 \item\small Data Structures
+%                 \item Software Methodology
+%                 \item Algorithms Analysis
+%                 \item Database Management
+%                 \item Artificial Intelligence
+%                 \item Internet Technology
+%                 \item Systems Programming
+%                 \item Computer Architecture
+%             \end{itemize}
+%         \end{multicols}
+%         \vspace*{2.0\multicolsep}
+    %\resumeSubHeadingListEnd
+
+%-----------INVOLVEMENT---------------
+% \section*{\normalsize\textbf{OPEN SOURCE}}
+%         \resumeItemListStart
+%             \resumeItem{Contributed official starter templates to GatsbyJS.\href{https://github.com/gatsbyjs/gatsby/pulls?q=is:pr+author:Sai7xp+is:closed}{ \underline{gatsby/pulls/Sai7xp}} }
+%             \resumeItem{Over \textbf{23K+} views for articles published on\href{https://dev.to/sai7xp}{ \underline{Dev.to}} community.}
+%             \resumeItem{Received Google Home device as reward for contributing to \textbf{Google Assistant Actions}.}
+%         \resumeItemListEnd
+\section*{\normalsize\textbf{OPEN SOURCE}}
+    % \vspace{-5pt}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {}{}{}
+          \resumeItemListStart
+           \vspace{-16pt}
+          \resumeItem{Contributed official starter templates to GatsbyJS.\href{https://github.com/gatsbyjs/gatsby/pulls?q=is:pr+author:Sai7xp+is:closed}{ \underline{gatsby/pulls/Sai7xp}} }
+            \resumeItem{Over \textbf{23K+} views for articles published on\href{https://dev.to/sai7xp}{ \underline{Dev.to}} community.}
+            \resumeItem{Received Google Home device as reward for contributing to \textbf{Google Assistant Actions}.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+\vspace{-10pt}
+
+\end{document}
