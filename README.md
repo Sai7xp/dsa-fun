@@ -11,7 +11,7 @@
 
 ### Basic Concepts
 
-- [Imp Code Snippets/Logics](imp_logics.md)
+- [🌻💎 Imp Code Snippets/Logics](imp_logics.md)
 - [Java Cheat Sheet Notion Link ↗][def34]
 - [👑 Java Fundamentals & OOPs Concepts(Inheritance, Polymorphism, Abstraction, Encapsulation)][def149]
 - [👑 Writing a Custom Comparator in Java][def157]
@@ -83,6 +83,7 @@
 <!-- Strings  -->
 
 ### Strings
+
 - https://leetcode.com/discuss/post/2001789/collections-of-important-string-question-pc6y/
 
 | Problem Details                                                                  | Description                                                                                                                                                                                                              |
@@ -284,7 +285,7 @@
 ### Intervals
 
 - [💎 Merge Intervals][def200] - Sort the array using custom comparator `Arrays.sort(intervals,(o1, o2) -> o1[0] - o2[0])` Now start merging intervals
-- [💎 Insert Intervals][def239] - Identify the part where we can insert our new interval, till then take all the left part greedily and in the middle part we have to insert new interval, and take the remaining right part greedily
+- [💎 Insert Interval][def239] - Identify the part where we can insert our new interval, till then take all the left part greedily and in the middle part we have to insert new interval, and take the remaining right part greedily
 - [Meeting Rooms 1][def237] - Sort the intervals by starting time and start checking for any overlaps, if there's a overlap then immediately return false
 - [N meetings in one room][def240] - Greedy. sort meetings by end time and check how many meetings we can accomodate
 - [Non Overlapping Intervals][def241] - sort the intervals by their end time and whenever there's a overlap we need to remove that interval. keep track of lastScheduledMeetingEndTime
@@ -336,6 +337,7 @@
 | [190. Reverse Bits][def140]                                   | check the each bit in a given 32 bit integer and set the bit in result. If 1st bit in `n` is a set then the last bit in result should be set                                                                                                            |
 | [3151. Special Array I][def145]                               | Compare the parities of every adjacent pairs and check if they are diff or not, if same return false. use AND and xOR operator                                                                                                                          |
 | [1356. Sort Integers by The Number of 1 Bits][def191]         |                                                                                                                                                                                                                                                         |
+| [1360. Number of Days Between Two Dates][def267]              | similar to 'Day of the Year'                                                                                                                                                                                                                            |
 
 <!-- Cyclic Sort  -->
 
@@ -640,7 +642,7 @@ Problems that can be solved using Bucket sort technique
 [def197]: https://leetcode.com/problems/rotate-image/description/
 [def198]: https://leetcode.com/problems/set-matrix-zeroes/
 [def199]: Algorithms/Backtracking/Maze.java
-[def200]: LeetCode/Arrays/MergeIntervals/MergeIntervals.java
+[def200]: LeetCode/IntervalProblems/MergeIntervals/MergeIntervals.java
 [def201]: https://leetcode.com/problems/search-a-2d-matrix/
 [def202]: https://leetcode.com/problems/binary-tree-inorder-traversal/
 [def203]: https://leetcode.com/problems/binary-tree-preorder-traversal/
@@ -707,3 +709,4 @@ Problems that can be solved using Bucket sort technique
 [def264]: https://leetcode.com/problems/course-schedule-ii/
 [def265]: https://leetcode.com/problems/island-perimeter/
 [def266]: LeetCode/TwoPointers/LC76
+[def267]: https://leetcode.com/problems/number-of-days-between-two-dates/
